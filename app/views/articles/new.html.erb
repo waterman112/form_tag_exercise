@@ -1,0 +1,73 @@
+<h1>this is NEW PAGE</h1>
+
+<style>
+.greens{
+  background-color:grey;
+}
+</style>
+
+
+
+<!--form_tag ..._tag的特点就是，如果后面加上了 key:value 基本上可以认定是options选项，比较常用的参数基本上直接写上值就ok了-->
+
+<%= form_tag articles_path do  %>
+  <%= button_tag '这是buttom_tag' ,type:'submit' %>
+
+  <!--check_box_tag的属性直接在check_box_tag后面跟上，并且用逗号隔开，如果出现了分号，则认为是options的内容-->
+  <%= check_box_tag :tos, :yes, :flase, :disabled => :true %>
+
+  <%= color_field_tag :color, '#ff00ff', class:'special_input',disabled:'true' %>
+
+  <%= date_field_tag :date, '01/01/2014', class:'special_input',disabled:true %>
+
+  <%= datetime_field_tag 'date_time_file_tag', '01/02/2015', class:'special_input', disabled:true %>
+
+  <%= datetime_local_field_tag 'date_time_local_field_tag', '11/11/2016', class:'special_input', disapbled:true  %>
+
+  <%= email_field_tag 'email_field_tag', 'linhaixiaohuo@163.com', class:'my_email',disabled:true %>
+
+  <%= field_set_tag nil, class:'formate' do %>
+    <p> <%= text_field_tag 'name' %>   </p>
+  <% end %>
+
+  <%= file_field_tag 'file' %>
+
+  <%= hidden_field_tag 'hidden_field_tag', 'this is hidden_field_tag value', onchange:"alert('input changed')" %>
+
+  <%= image_submit_tag 'http://photo.enterdesk.com/2010-10-24/enterdesk.com-3B11711A460036C51C19F87E7064FE9D.jpg', class:'search_button', data:{confirm:"are you sure?"} %>
+
+  <%=  label_tag 'name', nil, class:'small_label' %>
+
+  <%= month_field_tag 'month_field_tag', nil, class:'month' %>
+
+  <%= number_field_tag 'number_field_tag', nil, class:"number" %>
+
+  <%= password_field_tag 'password', 'your secret here', class:'password_field' %>
+
+  <%= phone_field_tag 'phone', '1111', class:'phone_field' %>
+
+  <%= radio_button_tag 'color', 'green', true, class:'color_input' %>
+
+  <%= range_field_tag 'range', nil, class:'range_field' %>
+
+  <%= search_field_tag 'search', 'this is search input', class:'special_input' %>
+
+  <%= select_tag 'select', options_for_select([['visa','master'],['sisa','raster'],'master']) %>
+
+  <%= submit_tag 'save_editor', class:'greens' %>
+
+  <%= telephone_field_tag 'telephone', '23323232323', class:'greens' %>
+
+  <%= text_area_tag 'post', nil, size:'25*10' %>
+
+  <%= text_field_tag 'query', 'enter your search phone', class:'special_input' %>
+
+  <%= time_field_tag 'time_field', 'this is time filed tag', class:'special_input' %>
+
+  <%= url_field_tag 'url_field', 'http://rubyonrails.org', class:'special_input',disabled:true   %>
+
+  <%= url_field_tag 'url_field', 'http://rubyonrails.org', class:'special_input' %>
+
+  <%= week_field_tag 'week_field', 'week_field_value', class:'special_input' %>
+
+<% end %>
